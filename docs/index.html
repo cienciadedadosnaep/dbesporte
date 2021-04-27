@@ -37,6 +37,8 @@ window.FlexDashboardComponents = [];
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="site_libs/echarts4r-4.8.0/echarts-en.min.js"></script>
 <script src="site_libs/echarts4r-4.8.0/ecStat.min.js"></script>
@@ -835,7 +837,7 @@ html, body {
 </div><!--/.container-->
 </div><!--/.navbar-->
 
-<img class="mobile-figure" data-mobile-figure-id=fig1 src="index_files/figure-html/unnamed-chunk-4-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig1 src="index_files/figure-html/unnamed-chunk-17-1.mb.png" />
 <script type="text/javascript">
 
 
@@ -2628,67 +2630,189 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<!-- Column {data-width=200} -->
-<!-- ------------------------------------- -->
-<!-- ### Inscritos - Cor/Raça Preta ou Parda  2016 -->
-<!-- ```{r} -->
-<!-- insc <- educacao_enem_estudantes_cor_2015_2019 %>% filter(year(ANO) %in% c(2016)) %>% filter(COR %in% c('Preta','Parda')) %>% summarise(valor=sum(FA)) %>% as_tibble() -->
-<!-- valueBox(insc, icon = "fa-pencil",href="#concluintes-f", -->
-<!--          color = "#7faed2") -->
-<!-- ``` -->
-<!-- ### Inscritos - Cor/Raça Preta ou Parda 2019 -->
-<!-- ```{r} -->
-<!-- inscr <- educacao_enem_estudantes_cor_2015_2019 %>% filter(year(ANO) %in% c(2019)) %>% filter(COR %in% c('Preta','Parda')) %>% summarise(valor=sum(FA)) %>% as_tibble() -->
-<!--   valueBox(inscr, icon = "fa-pencil", href="#concluintes-m",color='#4a82a8') -->
-<!-- ``` -->
-<!-- ### **Tema:** Cultura e Esportes -->
-<!-- ```{r} -->
-<!-- knitr::include_graphics("figure/traveGol.jpg") -->
-<!-- ```  -->
-<!-- Column {.tabset} -->
-<!-- ----------------------------------------------------------------------- -->
-<!-- o Column {.tabset} é o comando que divide o dashboard em colunas como tabela -->
 <div id="gols-totais-vs.-faltas-cometidas" class="section level1" data-navmenu="Menu">
 <h1>Gols totais vs. Faltas cometidas</h1>
-<div id="gtfc" class="section level3">
-<h3><font size="5"> Gols totais vs. Faltas cometidas </font></h3>
+<div id="column" class="section level2" data-width="200">
+<h2>Column</h2>
+<div class="logos">
+<img src="figure/bahia-ec-logo.svg" width="80px" align="middle">
+</div>
+<div id="faltas-cometidas-bahia" class="section level3">
+<h3>Faltas cometidas Bahia</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-1fb9be11257917e05946" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1fb9be11257917e05946">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"type":"value"}],"legend":{"data":["ata","gol","lat","mei","zag"]},"series":[{"data":[{"value":[0,0]},{"value":[0,5]},{"value":[0,4]},{"value":[0,1]},{"value":[0,1]},{"value":[0,5]},{"value":[0,0]},{"value":[0,0]},{"value":[0,5]},{"value":[1,3]},{"value":[2,4]},{"value":[3,18]},{"value":[5,23]},{"value":[5,17]},{"value":[6,45]},{"value":[7,37]},{"value":[8,31]},{"value":[10,55]},{"value":[11,39]}],"name":"ata","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[0,0]},{"value":[0,2]},{"value":[0,2]}],"name":"gol","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,42]},{"value":[0,8]},{"value":[0,10]},{"value":[0,8]},{"value":[0,1]},{"value":[0,5]},{"value":[0,38]},{"value":[0,26]},{"value":[0,27]},{"value":[0,27]},{"value":[1,54]}],"name":"lat","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,15]},{"value":[0,11]},{"value":[0,18]},{"value":[0,32]},{"value":[0,2]},{"value":[0,2]},{"value":[0,30]},{"value":[0,13]},{"value":[0,0]},{"value":[0,0]},{"value":[1,8]},{"value":[1,9]},{"value":[1,22]},{"value":[1,8]},{"value":[2,40]},{"value":[2,69]},{"value":[2,20]},{"value":[3,20]},{"value":[3,61]},{"value":[4,56]},{"value":[4,39]}],"name":"mei","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,16]},{"value":[0,12]},{"value":[0,2]},{"value":[0,3]},{"value":[0,28]},{"value":[0,1]},{"value":[0,0]},{"value":[0,6]},{"value":[1,8]},{"value":[1,32]},{"value":[1,11]},{"value":[2,26]},{"value":[4,21]}],"name":"zag","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15}],"color":["#175676","#4189AF","#83B1D5","#FDD168","#A094E1","#87A5B5"],"backgroundColor":"#ffffff","toolbox":{"feature":{"dataView":{"title":"Ver dados"},"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"cross"},"textStyle":{"fontFamily":"arial","fontSize":12}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<p><span class="value-output" data-icon="fa-thumbs-o-down" data-color="#7faed2" data-href="#concluintes-f">564</span></p>
+</div>
+<div id="gols---bahia" class="section level3">
+<h3>Gols - Bahia</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-futbol-o" data-color="#7faed2" data-href="#concluintes-f">42</span></p>
+</div>
+</div>
+<div id="column-1" class="section level2" data-width="200">
+<h2>Column</h2>
+<div class="logos">
+<img src="figure/ec-vitoria-logo.svg" width="80px" align="middle">
+</div>
+<div id="faltas-cometidas-vitória" class="section level3">
+<h3>Faltas cometidas Vitória</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-thumbs-o-down" data-color="#d62839" data-href="#concluintes-f">620</span></p>
+</div>
+<div id="gols---vitória" class="section level3">
+<h3>Gols - Vitória</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-futbol-o" data-color="#d62839" data-href="#concluintes-f">50</span></p>
+</div>
+</div>
+<div id="column-2" class="section level2">
+<h2>Column</h2>
+<div id="gols-totais-gt-vs.-faltas-cometidas-fc" class="section level3">
+<h3><font size="5"> Gols totais (GT) vs. Faltas cometidas (FC) </font></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-c1ccd22f48deb8261b92" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1ccd22f48deb8261b92">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Nº FC"}],"xAxis":[{"type":"value","name":"Nº GT"}],"legend":{"data":["ata","gol","lat","mei","zag"]},"series":[{"data":[{"value":[0,0]},{"value":[0,5]},{"value":[0,4]},{"value":[0,1]},{"value":[0,1]},{"value":[0,5]},{"value":[0,0]},{"value":[0,0]},{"value":[0,5]},{"value":[1,3]},{"value":[2,4]},{"value":[3,18]},{"value":[5,23]},{"value":[5,17]},{"value":[6,45]},{"value":[7,37]},{"value":[8,31]},{"value":[10,55]},{"value":[11,39]}],"name":"ata","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[0,0]},{"value":[0,2]},{"value":[0,2]}],"name":"gol","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,42]},{"value":[0,8]},{"value":[0,10]},{"value":[0,8]},{"value":[0,1]},{"value":[0,5]},{"value":[0,38]},{"value":[0,26]},{"value":[0,27]},{"value":[0,27]},{"value":[1,54]}],"name":"lat","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,15]},{"value":[0,11]},{"value":[0,18]},{"value":[0,32]},{"value":[0,2]},{"value":[0,2]},{"value":[0,30]},{"value":[0,13]},{"value":[0,0]},{"value":[0,0]},{"value":[1,8]},{"value":[1,9]},{"value":[1,22]},{"value":[1,8]},{"value":[2,40]},{"value":[2,69]},{"value":[2,20]},{"value":[3,20]},{"value":[3,61]},{"value":[4,56]},{"value":[4,39]}],"name":"mei","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,16]},{"value":[0,12]},{"value":[0,2]},{"value":[0,3]},{"value":[0,28]},{"value":[0,1]},{"value":[0,0]},{"value":[0,6]},{"value":[1,8]},{"value":[1,32]},{"value":[1,11]},{"value":[2,26]},{"value":[4,21]}],"name":"zag","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15}],"color":["#175676","#4189AF","#83B1D5","#FDD168","#A094E1","#87A5B5"],"backgroundColor":"#ffffff","toolbox":{"feature":{"dataView":{"title":"Ver dados"},"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"cross"},"textStyle":{"fontFamily":"arial","fontSize":12}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 </div>
 <div id="bolas-roubadas-vs.-faltas-cometidas" class="section level1" data-navmenu="Menu">
 <h1>Bolas roubadas vs. Faltas cometidas</h1>
-<div id="brfc" class="section level3">
-<h3><font size="5"> Bolas roubadas vs. Faltas cometidas </font></h3>
+<div id="column-3" class="section level2" data-width="200">
+<h2>Column</h2>
+<div class="logos">
+<img src="figure/bahia-ec-logo.svg" width="80px" align="middle">
+</div>
+<div id="faltas-cometidas-bahia-1" class="section level3">
+<h3>Faltas cometidas Bahia</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-7301b928a25ccbcdeb9e" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7301b928a25ccbcdeb9e">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"type":"value"}],"legend":{"data":["ata","gol","lat","mei","zag"]},"series":[{"data":[{"value":[0,1]},{"value":[0,4]},{"value":[0,5]},{"value":[0,0]},{"value":[0,0]},{"value":[1,0]},{"value":[1,5]},{"value":[1,4]},{"value":[1,5]},{"value":[2,1]},{"value":[3,3]},{"value":[3,18]},{"value":[3,17]},{"value":[5,23]},{"value":[10,55]},{"value":[16,39]},{"value":[22,37]},{"value":[28,45]},{"value":[37,31]}],"name":"ata","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[0,0]},{"value":[0,2]},{"value":[1,2]}],"name":"gol","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,1]},{"value":[3,8]},{"value":[5,5]},{"value":[9,8]},{"value":[13,10]},{"value":[19,26]},{"value":[22,27]},{"value":[30,38]},{"value":[35,27]},{"value":[44,54]},{"value":[62,42]}],"name":"lat","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[1,2]},{"value":[1,2]},{"value":[1,0]},{"value":[2,8]},{"value":[6,9]},{"value":[7,22]},{"value":[8,8]},{"value":[10,20]},{"value":[13,15]},{"value":[14,20]},{"value":[17,13]},{"value":[19,11]},{"value":[20,18]},{"value":[25,30]},{"value":[29,39]},{"value":[45,40]},{"value":[59,32]},{"value":[62,61]},{"value":[86,69]},{"value":[94,56]}],"name":"mei","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,11]},{"value":[1,0]},{"value":[3,1]},{"value":[6,2]},{"value":[7,3]},{"value":[10,16]},{"value":[10,6]},{"value":[14,8]},{"value":[20,12]},{"value":[24,28]},{"value":[26,21]},{"value":[34,32]},{"value":[36,26]}],"name":"zag","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15}],"color":["#175676","#4189AF","#83B1D5","#FDD168","#A094E1","#87A5B5"],"backgroundColor":"#ffffff","toolbox":{"feature":{"dataView":{"title":"Ver dados"},"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"cross"},"textStyle":{"fontFamily":"arial","fontSize":12}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<p><span class="value-output" data-icon="fa-thumbs-o-down" data-color="#7faed2" data-href="#concluintes-f">564</span></p>
+</div>
+<div id="gols---bahia-1" class="section level3">
+<h3>Gols - Bahia</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-futbol-o" data-color="#7faed2" data-href="#concluintes-f">42</span></p>
+</div>
+</div>
+<div id="column-4" class="section level2" data-width="200">
+<h2>Column</h2>
+<div class="logos">
+<img src="figure/ec-vitoria-logo.svg" width="80px" align="middle">
+</div>
+<div id="faltas-cometidas-vitória-1" class="section level3">
+<h3>Faltas cometidas Vitória</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-thumbs-o-down" data-color="#d62839" data-href="#concluintes-f">620</span></p>
+</div>
+<div id="gols---vitória-1" class="section level3">
+<h3>Gols - Vitória</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-futbol-o" data-color="#d62839" data-href="#concluintes-f">50</span></p>
+</div>
+</div>
+<div id="column-5" class="section level2">
+<h2>Column</h2>
+<div id="roubadas-de-bola-rb-vs.-faltas-cometidas-fc" class="section level3">
+<h3><font size="5"> Roubadas de Bola (RB) vs. Faltas cometidas (FC) </font></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-bef9fc447eff622c0807" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bef9fc447eff622c0807">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Nº FC"}],"xAxis":[{"type":"value","name":"Nº RB"}],"legend":{"data":["ata","gol","lat","mei","zag"]},"series":[{"data":[{"value":[0,1]},{"value":[0,4]},{"value":[0,5]},{"value":[0,0]},{"value":[0,0]},{"value":[1,0]},{"value":[1,5]},{"value":[1,4]},{"value":[1,5]},{"value":[2,1]},{"value":[3,3]},{"value":[3,18]},{"value":[3,17]},{"value":[5,23]},{"value":[10,55]},{"value":[16,39]},{"value":[22,37]},{"value":[28,45]},{"value":[37,31]}],"name":"ata","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[0,0]},{"value":[0,2]},{"value":[1,2]}],"name":"gol","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,1]},{"value":[3,8]},{"value":[5,5]},{"value":[9,8]},{"value":[13,10]},{"value":[19,26]},{"value":[22,27]},{"value":[30,38]},{"value":[35,27]},{"value":[44,54]},{"value":[62,42]}],"name":"lat","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[1,2]},{"value":[1,2]},{"value":[1,0]},{"value":[2,8]},{"value":[6,9]},{"value":[7,22]},{"value":[8,8]},{"value":[10,20]},{"value":[13,15]},{"value":[14,20]},{"value":[17,13]},{"value":[19,11]},{"value":[20,18]},{"value":[25,30]},{"value":[29,39]},{"value":[45,40]},{"value":[59,32]},{"value":[62,61]},{"value":[86,69]},{"value":[94,56]}],"name":"mei","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,11]},{"value":[1,0]},{"value":[3,1]},{"value":[6,2]},{"value":[7,3]},{"value":[10,16]},{"value":[10,6]},{"value":[14,8]},{"value":[20,12]},{"value":[24,28]},{"value":[26,21]},{"value":[34,32]},{"value":[36,26]}],"name":"zag","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15}],"color":["#175676","#4189AF","#83B1D5","#FDD168","#A094E1","#87A5B5"],"backgroundColor":"#ffffff","toolbox":{"feature":{"dataView":{"title":"Ver dados"},"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"cross"},"textStyle":{"fontFamily":"arial","fontSize":12}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 </div>
 <div id="bolas-roubadas-vs.-gols-totais" class="section level1" data-navmenu="Menu">
 <h1>Bolas roubadas vs. Gols totais</h1>
-<div id="brgt" class="section level3">
-<h3><font size="5"> Bolas roubadas vs. Gols totais </font></h3>
+<div id="column-6" class="section level2" data-width="200">
+<h2>Column</h2>
+<div class="logos">
+<img src="figure/bahia-ec-logo.svg" width="80px" align="middle">
+</div>
+<div id="faltas-cometidas-bahia-2" class="section level3">
+<h3>Faltas cometidas Bahia</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-72737670a5d1e98b2ef6" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
-<script type="application/json" data-for="htmlwidget-72737670a5d1e98b2ef6">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"type":"value"}],"legend":{"data":["ata","gol","lat","mei","zag"]},"series":[{"data":[{"value":[0,0]},{"value":[0,2]},{"value":[0,0]},{"value":[0,0]},{"value":[0,0]},{"value":[1,0]},{"value":[1,0]},{"value":[1,0]},{"value":[1,0]},{"value":[2,0]},{"value":[3,1]},{"value":[3,3]},{"value":[3,5]},{"value":[5,5]},{"value":[10,10]},{"value":[16,11]},{"value":[22,7]},{"value":[28,6]},{"value":[37,8]}],"name":"ata","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[0,0]},{"value":[0,0]},{"value":[1,0]}],"name":"gol","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,0]},{"value":[3,0]},{"value":[5,0]},{"value":[9,0]},{"value":[13,0]},{"value":[19,0]},{"value":[22,0]},{"value":[30,0]},{"value":[35,0]},{"value":[44,1]},{"value":[62,0]}],"name":"lat","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[1,0]},{"value":[1,0]},{"value":[1,0]},{"value":[2,1]},{"value":[6,1]},{"value":[7,1]},{"value":[8,1]},{"value":[10,3]},{"value":[13,0]},{"value":[14,2]},{"value":[17,0]},{"value":[19,0]},{"value":[20,0]},{"value":[25,0]},{"value":[29,4]},{"value":[45,2]},{"value":[59,0]},{"value":[62,3]},{"value":[86,2]},{"value":[94,4]}],"name":"mei","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,1]},{"value":[1,0]},{"value":[3,0]},{"value":[6,0]},{"value":[7,0]},{"value":[10,0]},{"value":[10,0]},{"value":[14,1]},{"value":[20,0]},{"value":[24,0]},{"value":[26,4]},{"value":[34,1]},{"value":[36,2]}],"name":"zag","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15}],"color":["#175676","#4189AF","#83B1D5","#FDD168","#A094E1","#87A5B5"],"backgroundColor":"#ffffff","toolbox":{"feature":{"dataView":{"title":"Ver dados"},"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"cross"},"textStyle":{"fontFamily":"arial","fontSize":12}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<p><span class="value-output" data-icon="fa-thumbs-o-down" data-color="#7faed2" data-href="#concluintes-f">564</span></p>
+</div>
+<div id="gols---bahia-2" class="section level3">
+<h3>Gols - Bahia</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-futbol-o" data-color="#7faed2" data-href="#concluintes-f">42</span></p>
+</div>
+</div>
+<div id="column-7" class="section level2" data-width="200">
+<h2>Column</h2>
+<div class="logos">
+<img src="figure/ec-vitoria-logo.svg" width="80px" align="middle">
+</div>
+<div id="faltas-cometidas-vitória-2" class="section level3">
+<h3>Faltas cometidas Vitória</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-thumbs-o-down" data-color="#d62839" data-href="#concluintes-f">620</span></p>
+</div>
+<div id="gols---vitória-2" class="section level3">
+<h3>Gols - Vitória</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><span class="value-output" data-icon="fa-futbol-o" data-color="#d62839" data-href="#concluintes-f">50</span></p>
+</div>
+</div>
+<div id="column-8" class="section level2">
+<h2>Column</h2>
+<div id="roubadas-de-bola-rb-vs.-gols-totais-por-jogador-gt" class="section level3">
+<h3><font size="5"> Roubadas de Bola (RB) vs. Gols totais por jogador (GT) </font></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-d437d864bd12c9029171" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d437d864bd12c9029171">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"Nº GT"}],"xAxis":[{"type":"value","name":"Nº RB"}],"legend":{"data":["ata","gol","lat","mei","zag"]},"series":[{"data":[{"value":[0,0]},{"value":[0,2]},{"value":[0,0]},{"value":[0,0]},{"value":[0,0]},{"value":[1,0]},{"value":[1,0]},{"value":[1,0]},{"value":[1,0]},{"value":[2,0]},{"value":[3,1]},{"value":[3,3]},{"value":[3,5]},{"value":[5,5]},{"value":[10,10]},{"value":[16,11]},{"value":[22,7]},{"value":[28,6]},{"value":[37,8]}],"name":"ata","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[0,0]},{"value":[0,0]},{"value":[1,0]}],"name":"gol","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,0]},{"value":[3,0]},{"value":[5,0]},{"value":[9,0]},{"value":[13,0]},{"value":[19,0]},{"value":[22,0]},{"value":[30,0]},{"value":[35,0]},{"value":[44,1]},{"value":[62,0]}],"name":"lat","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[0,0]},{"value":[1,0]},{"value":[1,0]},{"value":[1,0]},{"value":[2,1]},{"value":[6,1]},{"value":[7,1]},{"value":[8,1]},{"value":[10,3]},{"value":[13,0]},{"value":[14,2]},{"value":[17,0]},{"value":[19,0]},{"value":[20,0]},{"value":[25,0]},{"value":[29,4]},{"value":[45,2]},{"value":[59,0]},{"value":[62,3]},{"value":[86,2]},{"value":[94,4]}],"name":"mei","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15},{"data":[{"value":[1,1]},{"value":[1,0]},{"value":[3,0]},{"value":[6,0]},{"value":[7,0]},{"value":[10,0]},{"value":[10,0]},{"value":[14,1]},{"value":[20,0]},{"value":[24,0]},{"value":[26,4]},{"value":[34,1]},{"value":[36,2]}],"name":"zag","type":"scatter","symbol":null,"coordinateSystem":"cartesian2d","yAxisIndex":0,"xAxisIndex":0,"symbolSize":15}],"color":["#175676","#4189AF","#83B1D5","#FDD168","#A094E1","#87A5B5"],"backgroundColor":"#ffffff","toolbox":{"feature":{"dataView":{"title":"Ver dados"},"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"cross"},"textStyle":{"fontFamily":"arial","fontSize":12}}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 </div>
 <div id="correlação" class="section level1" data-navmenu="Menu">
 <h1>Correlação</h1>
-<div id="brgt" class="section level3">
+<div id="column-9" class="section level2" data-width="200">
+<h2>Column</h2>
+<div id="tema-cultura-e-esportes" class="section level3">
+<h3><strong>Tema:</strong> Cultura e Esportes</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p><img src="figure/traveGol.jpg" width="576" data-figure-id=fig1 /></p>
+</div>
+</div>
+<div id="column-10" class="section level2">
+<h2>Column</h2>
+<div id="matriz-de-correlação" class="section level3">
 <h3><font size="5"> Matriz de correlação </font></h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="576" data-figure-id=fig1 /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" width="576" data-figure-id=fig1 /></p>
+</div>
 </div>
 </div>
 

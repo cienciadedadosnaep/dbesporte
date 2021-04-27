@@ -39,37 +39,61 @@ library(GGally)
 
 ```
 
-<!-- Column {data-width=200} -->
-<!-- ------------------------------------- -->
-
-<!-- ### Inscritos - Cor/Raça Preta ou Parda  2016 -->
-<!-- ```{r} -->
-<!-- insc <- educacao_enem_estudantes_cor_2015_2019 %>% filter(year(ANO) %in% c(2016)) %>% filter(COR %in% c('Preta','Parda')) %>% summarise(valor=sum(FA)) %>% as_tibble() -->
-<!-- valueBox(insc, icon = "fa-pencil",href="#concluintes-f", -->
-<!--          color = "#7faed2") --> 
-<!-- ``` -->
-
-<!-- ### Inscritos - Cor/Raça Preta ou Parda 2019 -->
-<!-- ```{r} -->
-<!-- inscr <- educacao_enem_estudantes_cor_2015_2019 %>% filter(year(ANO) %in% c(2019)) %>% filter(COR %in% c('Preta','Parda')) %>% summarise(valor=sum(FA)) %>% as_tibble() -->
-<!--   valueBox(inscr, icon = "fa-pencil", href="#concluintes-m",color='#4a82a8') -->
-<!-- ``` -->
-
-<!-- ### **Tema:** Cultura e Esportes -->
-
-<!-- ```{r} -->
-<!-- knitr::include_graphics("figure/traveGol.jpg") -->
-<!-- ```  -->
-
-
-<!-- Column {.tabset} -->
-<!-- ----------------------------------------------------------------------- -->
-<!-- o Column {.tabset} é o comando que divide o dashboard em colunas como tabela -->
 
 Gols totais vs. Faltas cometidas {data-navmenu="Menu"}
 =====================================
 
-### <font size="5"> Gols totais vs. Faltas cometidas </font> {#gtfc}
+Column {data-width=200}
+-------------------------------------
+
+<div class="logos"><img src="figure/bahia-ec-logo.svg" width="80px" align="middle"></div>
+
+
+### Faltas cometidas Bahia 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Bahia')) %>% 
+  summarise(valor=sum(faltasCometidas)) %>% as_tibble()
+valueBox(insc, icon = "fa-thumbs-o-down",href="#concluintes-f",
+         color = "#7faed2")
+```
+
+### Gols -  Bahia 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Bahia')) %>% 
+  summarise(valor=sum(Gtotal)) %>% as_tibble()
+valueBox(insc, icon = "fa-futbol-o",href="#concluintes-f",
+         color = "#7faed2")
+```
+
+Column {data-width=200}
+-----------------------------------
+
+<div class="logos"><img src="figure/ec-vitoria-logo.svg" width="80px" align="middle"></div>
+
+
+
+### Faltas cometidas Vitória 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Vitória')) %>% 
+  summarise(valor=sum(faltasCometidas)) %>% as_tibble()
+valueBox(insc, icon = "fa-thumbs-o-down",href="#concluintes-f",
+         color = "#d62839")
+```
+
+### Gols -  Vitória 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Vitória')) %>% 
+  summarise(valor=sum(Gtotal)) %>% as_tibble()
+valueBox(insc, icon = "fa-futbol-o",href="#concluintes-f",
+         color = "#d62839")
+```
+
+
+
+Column
+-------------------------------------
+
+### <font size="5"> Gols totais (GT) vs. Faltas cometidas (FC) </font>
 
 ```{r}
 
@@ -81,15 +105,66 @@ Gols totais vs. Faltas cometidas {data-navmenu="Menu"}
     e_toolbox_feature(feature = "dataView",title = "Ver dados")%>%
     e_tooltip(trigger="axis", axisPointer = list(type = "cross"),
            textStyle = list(fontFamily="arial", fontSize=12)) %>%
-    e_toolbox_feature(feature = "dataZoom")
-
+    e_toolbox_feature(feature = "dataZoom") %>%
+    e_axis_labels(x = "Nº GT", y = "Nº FC")
 
 ```
 
 Bolas roubadas vs. Faltas cometidas {data-navmenu="Menu"}
 =====================================
 
-### <font size="5"> Bolas roubadas vs. Faltas cometidas  </font> {#brfc}
+Column {data-width=200}
+-------------------------------------
+
+<div class="logos"><img src="figure/bahia-ec-logo.svg" width="80px" align="middle"></div>
+
+
+### Faltas cometidas Bahia 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Bahia')) %>% 
+  summarise(valor=sum(faltasCometidas)) %>% as_tibble()
+valueBox(insc, icon = "fa-thumbs-o-down",href="#concluintes-f",
+         color = "#7faed2")
+```
+
+### Gols -  Bahia 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Bahia')) %>% 
+  summarise(valor=sum(Gtotal)) %>% as_tibble()
+valueBox(insc, icon = "fa-futbol-o",href="#concluintes-f",
+         color = "#7faed2")
+```
+
+Column {data-width=200}
+-----------------------------------
+
+<div class="logos"><img src="figure/ec-vitoria-logo.svg" width="80px" align="middle"></div>
+
+
+
+### Faltas cometidas Vitória 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Vitória')) %>% 
+  summarise(valor=sum(faltasCometidas)) %>% as_tibble()
+valueBox(insc, icon = "fa-thumbs-o-down",href="#concluintes-f",
+         color = "#d62839")
+```
+
+### Gols -  Vitória 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Vitória')) %>% 
+  summarise(valor=sum(Gtotal)) %>% as_tibble()
+valueBox(insc, icon = "fa-futbol-o",href="#concluintes-f",
+         color = "#d62839")
+```
+
+
+
+Column
+-------------------------------------
+
+
+### <font size="5"> Roubadas de Bola (RB) vs. Faltas cometidas (FC)  </font>
 
 ```{r}
 
@@ -101,14 +176,66 @@ dados %>% group_by(Posicao) %>%
     e_toolbox_feature(feature = "dataView",title = "Ver dados")%>%
     e_tooltip(trigger="axis", axisPointer = list(type = "cross"),
            textStyle = list(fontFamily="arial", fontSize=12)) %>%
-    e_toolbox_feature(feature = "dataZoom")
+    e_toolbox_feature(feature = "dataZoom") %>%
+    e_axis_labels(x = "Nº RB", y = "Nº FC")
+ 
 
 ```
 
 Bolas roubadas vs. Gols totais {data-navmenu="Menu"}
 =====================================
 
-### <font size="5"> Bolas roubadas vs. Gols totais </font> {#brgt}
+Column {data-width=200}
+-------------------------------------
+
+<div class="logos"><img src="figure/bahia-ec-logo.svg" width="80px" align="middle"></div>
+
+
+### Faltas cometidas Bahia 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Bahia')) %>% 
+  summarise(valor=sum(faltasCometidas)) %>% as_tibble()
+valueBox(insc, icon = "fa-thumbs-o-down",href="#concluintes-f",
+         color = "#7faed2")
+```
+
+### Gols -  Bahia 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Bahia')) %>% 
+  summarise(valor=sum(Gtotal)) %>% as_tibble()
+valueBox(insc, icon = "fa-futbol-o",href="#concluintes-f",
+         color = "#7faed2")
+```
+
+Column {data-width=200}
+-----------------------------------
+
+<div class="logos"><img src="figure/ec-vitoria-logo.svg" width="80px" align="middle"></div>
+
+
+
+### Faltas cometidas Vitória 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Vitória')) %>% 
+  summarise(valor=sum(faltasCometidas)) %>% as_tibble()
+valueBox(insc, icon = "fa-thumbs-o-down",href="#concluintes-f",
+         color = "#d62839")
+```
+
+### Gols -  Vitória 
+```{r}
+insc <- dados %>% filter(ClubeID %in% c('Vitória')) %>% 
+  summarise(valor=sum(Gtotal)) %>% as_tibble()
+valueBox(insc, icon = "fa-futbol-o",href="#concluintes-f",
+         color = "#d62839")
+```
+
+
+
+Column
+-------------------------------------
+
+### <font size="5"> Roubadas de Bola (RB) vs. Gols totais por jogador (GT) </font> 
 
 ```{r}
 
@@ -120,13 +247,28 @@ Bolas roubadas vs. Gols totais {data-navmenu="Menu"}
     e_toolbox_feature(feature = "dataView",title = "Ver dados")%>%
     e_tooltip(trigger="axis", axisPointer = list(type = "cross"),
            textStyle = list(fontFamily="arial", fontSize=12)) %>%
-    e_toolbox_feature(feature = "dataZoom")
+    e_toolbox_feature(feature = "dataZoom") %>%
+    e_axis_labels(x = "Nº RB", y = "Nº GT")
 ```
 
 Correlação {data-navmenu="Menu"}
 =====================================
 
-### <font size="5"> Matriz de correlação </font> {#brgt}
+Column {data-width=200}
+-------------------------------------
+
+### **Tema:** Cultura e Esportes
+
+```{r}
+knitr::include_graphics("figure/traveGol.jpg")
+```
+
+
+Column
+-------------------------------------
+
+
+### <font size="5"> Matriz de correlação </font>
 
 ```{r}
 dados %>% select(Gtotal, 

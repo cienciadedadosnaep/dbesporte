@@ -276,10 +276,14 @@ dados %>% select(Gtotal,
                  faltasSofridas,     
                  passesErrados, 
                  roubosBola) %>%
-   ggcorr(geom = "blank", label = TRUE, hjust = 0.75) +
-   geom_point(size = 10, aes(color = coefficient > 0, alpha = abs(coefficient) > 0.5)) +
-   scale_alpha_manual(values = c("TRUE" = 0.25, "FALSE" = 0)) +
-   guides(color = FALSE, alpha = FALSE)
+                 cor() %>%
+                 e_charts() %>% 
+                 e_correlations(order = "hclust") %>% 
+                 e_tooltip()
+    #ggcorr(geom = "blank", label = TRUE, hjust = 0.75) +
+   # geom_point(size = 10, aes(color = coefficient > 0, alpha = abs(coefficient) > 0.5)) +
+   # scale_alpha_manual(values = c("TRUE" = 0.25, "FALSE" = 0)) +
+   # guides(color = FALSE, alpha = FALSE)
 
 ```
 

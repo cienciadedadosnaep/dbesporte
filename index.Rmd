@@ -256,6 +256,18 @@ Correlação {data-navmenu="Menu"}
 
 Column {data-width=200}
 -------------------------------------
+### Lista de Variáveis
+```{r}
+library(kableExtra)
+definicao <- c('Total de gols','Faltas Cometidas',
+               'Faltas Sofridas','Passes Errados',
+               'Roubos de Bola')
+referencias <- c("GT","FC","FS","PE","RB")
+tabelas <- data.frame(definicao,referencias)
+names(tabelas) <- c('`Definição`','`Referências`')
+tabelas %>% kable()
+```
+
 
 ### **Tema:** Cultura e Esportes
 
@@ -268,14 +280,15 @@ Column
 -------------------------------------
 
 
+
 ### <font size="5"> Matriz de correlação </font>
 
 ```{r}
-dados %>% select(Gtotal, 
-                 faltasCometidas, 
-                 faltasSofridas,     
-                 passesErrados, 
-                 roubosBola) %>%
+names(dados) <- c("AtletaID","Apelido","ClubeID","Posicao",        
+                  "GT","FC","FS","PE","RB" )
+
+
+dados %>% select(GT,FC,FS,PE,RB) %>%
                  cor() %>%
                  e_charts() %>% 
                  e_correlations(order = "hclust") %>% 
